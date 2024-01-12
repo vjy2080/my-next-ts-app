@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 // import React, { useState, useEffect } from 'react';
 // import './page.module.css';
 // import { MDBTable, MDBTableHead, MDBTableBody, MDBBtn, } from 'mdb-react-ui-kit';
@@ -161,13 +161,12 @@
 
 
 import React from 'react';
-import Navigation from './dashboard/Navigation/page';
-import LoginComponent from '@/components/LoginComponent';
+import Navigation from './navigation/page';
+import LoginComponent from '@/app/login/page';
 
 export default function page() {
   return (
     <>
-      <Navigation />
       <LoginComponent />
     </>
   );

@@ -1,8 +1,8 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import './page.module.css';
 import { MDBTable, MDBTableHead, MDBTableBody, MDBBtn, } from 'mdb-react-ui-kit';
 import ModalComponent from '@/components/ModalComponent';
+import Navigation from '../navigation/page';
 
 type dataArrayProps = {
   title: string;
@@ -118,6 +118,8 @@ export default function Home(): React.JSX.Element {
   };
 
   return (
+    <>
+    <Navigation/>
     <div className='text-center'>
       <MDBTable hover small>
         <MDBTableHead className='next'>
@@ -153,5 +155,6 @@ export default function Home(): React.JSX.Element {
         </MDBTableBody>
       </MDBTable>
     </div >
+    </>
   );
 };
