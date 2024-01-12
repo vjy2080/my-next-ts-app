@@ -140,7 +140,7 @@ export default function Home(): React.JSX.Element {
   };
 
   return (
-    <div className='text-center d-flex'>
+    <div className='text-center'>
       <MDBTable hover small>
         <MDBTableHead className='next'>
           <tr className='table-primary'>
@@ -154,23 +154,24 @@ export default function Home(): React.JSX.Element {
           </tr>
         </MDBTableHead>
         <MDBTableBody>
-          {data.map((item) => (
-            <tr key={item.id}>
-              <td style={{ fontSize: 12, textAlign: 'left' }}>{item.title}</td>
-              <td style={{ fontSize: 12, textAlign: 'left' }}>{item.description}</td>
-              <td className='d-flex flex-direction-column justify-content-center'>
-                <MDBBtn className='me-2 btn-sm' color='info' onClick={() => updateHandle(item.id)}>
-                  Edit
-                </MDBBtn>
+          {
+            data.map((item) => (
+              <tr key={item.id}>
+                <td style={{ fontSize: 12 }}>{item.title}</td>
+                <td style={{ fontSize: 12 }}>{item.description}</td>
+                <td className='d-flex flex-direction-column justify-content-center'>
+                  <MDBBtn className='me-2 btn-sm' color='info' onClick={() => updateHandle(item.id)}>
+                    Edit
+                  </MDBBtn>
+                  <MDBBtn className='btn-sm' color='danger' onClick={() => deleteHandle(item.id)}>
+                    Delete
+                  </MDBBtn>
+                </td>
+              </tr>
+            ))
+          }
 
-
-                <MDBBtn className='btn-sm' color='danger' onClick={() => deleteHandle(item.id)}>
-                  Delete
-                </MDBBtn>
-              </td>
-            </tr>
-          ))}
-          <MDBModal open={basicModal} setOpen={setBasicModal} tabIndex='4'>
+          <MDBModal open={basicModal} setOpen={setBasicModal} tabIndex={4}>
             <MDBModalDialog>
               <MDBModalContent>
                 <MDBModalHeader>
@@ -180,7 +181,7 @@ export default function Home(): React.JSX.Element {
                 <MDBModalBody>
                   <MDBInput
                     tabIndex={1}
-                    className='text-center mb-3'
+                    className='mb-3'
                     autoFocus
                     label='Add title here'
                     size='sm'
@@ -191,7 +192,7 @@ export default function Home(): React.JSX.Element {
                   />
                   <MDBInput
                     tabIndex={2}
-                    className='text-center'
+                    // className='text-center'
                     autoFocus
                     label='Add description here'
                     size='sm'
