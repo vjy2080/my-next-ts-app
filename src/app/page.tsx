@@ -163,48 +163,6 @@ export default function Home(): React.JSX.Element {
                   Edit
                 </MDBBtn>
 
-                <MDBModal open={basicModal} setOpen={setBasicModal} tabIndex='4'>
-                  <MDBModalDialog>
-                    <MDBModalContent>
-                      <MDBModalHeader>
-                        <MDBModalTitle>{isUpdate ? 'Update' : 'Add New'}</MDBModalTitle>
-                        <MDBBtn className='btn-close' color='none' onClick={toggleOpen}></MDBBtn>
-                      </MDBModalHeader>
-                      <MDBModalBody>
-                        <MDBInput
-                          tabIndex={1}
-                          className='text-center mb-3'
-                          autoFocus
-                          label='Add title here'
-                          size='sm'
-                          id='form1'
-                          type='text'
-                          value={title}
-                          onChange={(e) => setTitle(e.target.value)}
-                        />
-                        <MDBInput
-                          tabIndex={2}
-                          className='text-center'
-                          autoFocus
-                          label='Add description here'
-                          size='sm'
-                          id='form1'
-                          type='text'
-                          value={desc}
-                          onChange={(e) => setDesc(e.target.value)}
-                        />
-                      </MDBModalBody>
-                      <MDBModalFooter className='justify-content-center'>
-                        <MDBBtn
-                          tabIndex={3}
-                          onClick={isUpdate ? updateDataHandle : addHandle}
-                        >
-                          {isUpdate ? 'Update' : 'Add New'}
-                        </MDBBtn>
-                      </MDBModalFooter>
-                    </MDBModalContent>
-                  </MDBModalDialog>
-                </MDBModal>
 
                 <MDBBtn className='btn-sm' color='danger' onClick={() => deleteHandle(item.id)}>
                   Delete
@@ -212,6 +170,48 @@ export default function Home(): React.JSX.Element {
               </td>
             </tr>
           ))}
+          <MDBModal open={basicModal} setOpen={setBasicModal} tabIndex='4'>
+            <MDBModalDialog>
+              <MDBModalContent>
+                <MDBModalHeader>
+                  <MDBModalTitle>{isUpdate ? 'Update' : 'Add New'}</MDBModalTitle>
+                  <MDBBtn className='btn-close' color='none' onClick={toggleOpen}></MDBBtn>
+                </MDBModalHeader>
+                <MDBModalBody>
+                  <MDBInput
+                    tabIndex={1}
+                    className='text-center mb-3'
+                    autoFocus
+                    label='Add title here'
+                    size='sm'
+                    id='form1'
+                    type='text'
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                  />
+                  <MDBInput
+                    tabIndex={2}
+                    className='text-center'
+                    autoFocus
+                    label='Add description here'
+                    size='sm'
+                    id='form1'
+                    type='text'
+                    value={desc}
+                    onChange={(e) => setDesc(e.target.value)}
+                  />
+                </MDBModalBody>
+                <MDBModalFooter className='justify-content-center'>
+                  <MDBBtn
+                    tabIndex={3}
+                    onClick={isUpdate ? updateDataHandle : addHandle}
+                  >
+                    {isUpdate ? 'Update' : 'Add New'}
+                  </MDBBtn>
+                </MDBModalFooter>
+              </MDBModalContent>
+            </MDBModalDialog>
+          </MDBModal>
         </MDBTableBody>
       </MDBTable>
     </div >
