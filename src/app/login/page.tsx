@@ -38,7 +38,7 @@ function App() {
                   <MDBBtn outline className='mx-2 px-5' color='success' size='lg'>
                     Login
                   </MDBBtn>
-                </Link>
+                </Link> 
 
 
 
